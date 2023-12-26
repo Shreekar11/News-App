@@ -13,6 +13,7 @@ import { Nunito } from 'next/font/google'
 import { auth } from './firebase/firebaseApp'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import LoadMore from './components/LoadMore';
+import { Toaster, toast } from 'sonner';
 
 const inter = Nunito({ subsets: ['latin'] });
 
@@ -32,9 +33,16 @@ export default function Home() {
 
   // console.log(user);
 
+  const [alert, setAlert] = useState(false);
+  setTimeout (() => {
+    setAlert(true);
+    toast.error("NewsAPI not available for deployment");
+  }, 10000);
+
   return (
     <div className={inter.className}>
       <Content />
+      {alert && <Toaster richColors position='top-center' />}
       {/* <h1 className='text-3xl font-semibold mt-10 flex justify-center'>Headlines</h1> */}
       <div className=" flex flex-wrap justify-center items-center gap-10">
         {headlines ? (
