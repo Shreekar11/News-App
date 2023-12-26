@@ -3,12 +3,16 @@ import './globals.css'
 // components
 import Content from './components/Content'
 import ArticleCard from './components/ArticleCard'
+
 import NewsApi from './lib/NewsApi'
+import { News } from './lib/NewsApi';
+import { useEffect, useState } from 'react';
 import { Nunito } from 'next/font/google'
+
+//firebase components
 import { auth } from './firebase/firebaseApp'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useEffect, useState } from 'react';
-import { News } from './lib/NewsApi';
+import LoadMore from './components/LoadMore';
 
 const inter = Nunito({ subsets: ['latin'] });
 
@@ -38,7 +42,7 @@ export default function Home() {
             <ArticleCard news={news} key={news.title} />
           ))
         ) : (
-          <h1>Loading...</h1>
+          <LoadMore />
         )}
       </div>
     </div>

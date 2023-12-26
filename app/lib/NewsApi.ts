@@ -19,7 +19,7 @@ class NewsApi{
     static getNews(url : string){
         return fetch(url, {
             next:{
-                revalidate: 60 * 60 * 2,
+                revalidate: 60 * 60,
             },
         })
         .then((res) => res.json())
