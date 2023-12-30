@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className={inter.className}>
       <Content />
-      {alert && <Toaster richColors position='top-center' />}
+      {<Toaster richColors position='top-center' />}
       {/* <h1 className='text-3xl font-semibold mt-10 flex justify-center'>Headlines</h1> */}
       <div className=" flex flex-wrap justify-center items-center gap-10">
         {headlines ? (

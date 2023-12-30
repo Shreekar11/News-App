@@ -6,7 +6,7 @@ function LoadMore() {
       <section className="flex justify-center items-center w-full">
         <div>
           <img
-            src="./spinner.gif"
+            src="./tube-spinner.svg"
             alt="spinner"
             width={56}
             height={56}
