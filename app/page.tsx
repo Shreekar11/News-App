@@ -8,7 +8,7 @@ async function Home() {
 
   const news: Root = await fetchNews()
 
-  console.log(news);
+  // console.log(news);
 
   return (
     <div className={inter.className}>

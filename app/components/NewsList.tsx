@@ -14,7 +14,7 @@ type Props = {
 function NewsList({ news }: Props) {
 
     const headlines = news.data.myQuery.articles;
-    console.log(headlines);
+    // console.log(headlines);
 
     return (
         <main className={inter.className}>
