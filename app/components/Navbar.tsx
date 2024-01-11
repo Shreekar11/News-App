@@ -32,8 +32,8 @@ export default function Navbar() {
     };
 
     const [user] = useAuthState(auth);
-
-    // console.log(user?.displayName);
+    const userName = user?.displayName;
+    const newUserName = user?.email?.slice(0, (user?.email.length)-10);
 
     return (
         <div className={inter.className}>
@@ -49,7 +49,8 @@ export default function Navbar() {
                             <div className="ml-5 text-xl flex items-center space-x-2 gap-4">
                                 <Link href="/" onClick={() => router.push('/')} className='hover:text-red-500'>Home</Link>
                                 {user && <Link href="/saved-news" onClick={() => router.push('/saved-news')} className='hover:text-red-500 '>Saved News</Link>}
-                                {user && <p className='text-red-500 font-semibold hover:text-black hover:cursor-pointer'>{user.displayName}</p>}
+                                {user && (userName ? (<p className='text-red-500 font-semibold hover:text-black hover:cursor-pointer'>{user.displayName}</p>) 
+                                : (<p className='text-red-500 font-semibold hover:text-black hover:cursor-pointer'>{ newUserName }</p>))}
                                 {user && <div>|</div>}
 
                                 {
