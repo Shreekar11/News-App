@@ -8,6 +8,7 @@ import { auth } from '../firebase/firebaseApp';
 import { signOut } from 'firebase/auth';
 import { Toaster, toast } from 'sonner';
 
+
 const inter = Nunito({ subsets: ['latin'] });
 
 export default function Navbar() {
@@ -32,7 +33,7 @@ export default function Navbar() {
 
     const [user] = useAuthState(auth);
 
-    console.log(user?.displayName);
+    // console.log(user?.displayName);
 
     return (
         <div className={inter.className}>
@@ -125,6 +126,7 @@ export default function Navbar() {
                     </div>
                 )}
             </nav>
+
         </div>
     )
 }

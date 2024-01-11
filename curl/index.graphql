@@ -1,0 +1,30 @@
+type ArticlesEntry {
+  author: String
+  content: String
+  description: String
+  publishedAt: DateTime
+  source: Source
+  title: String
+  url: String
+  urlToImage: String
+}
+
+type Root {
+    data: {
+        myQuery:{
+            articles: ArticlesEntry[];
+            status: string;
+            totalResults: int;
+        }
+    }
+}
+
+type Source {
+  id: String
+  name: String
+}
+
+type Query {
+  myQuery(apiKey: String): Root
+    @rest(endpoint: "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=eadc6c12c16e46e9a93bb3fd62ea99ee")
+}

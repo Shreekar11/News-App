@@ -1,15 +1,17 @@
 import Link from "next/link";
-import { News } from "../lib/NewsApi"
 import { Nunito } from "next/font/google";
-import Image from "next/image";
 
 const inter = Nunito({ subsets: ['latin'] });
 
-interface ArticleCardProps {
-    news: News;
+type Props = {
+    news: ArticlesEntry;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ news }) => {
+interface ArticlesEntry{
+    [key: string]: any;
+}
+
+function ArticleCard({news}: Props){
 
     let convertObjectToUrl = () => {
         let newsUrl = ""
@@ -44,8 +46,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ news }) => {
                 }
                 <Link href={`/articles/${news.title}?${convertObjectToUrl()}`}>
                     <h3 className='text-2xl sm:text-3xl font-bold m-4 '>{news.title.slice(0, 50)}...</h3>
-                    <p className=' text-slate-500 m-4'>{news.description}</p>
-                    {/* <p className='text-slate-500 m-4'>Published At : {news.publishedAt}</p> */}
+                    <p className=' text-slate-500 m-4'>{news.description.slice(0, 70)}...</p>
+                    <p className='text-slate-500 m-4'>Published At : {news.publishedAt}</p>
                 </Link>
 
                 {/* <Link href={`/articles/${news.title}?${convertObjectToUrl()}`} className='flex justify-center items-center'>

@@ -6,9 +6,8 @@ import { useSearchParams } from "next/navigation"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { db } from "@/app/firebase/firebaseApp";
 import { doc, collection, addDoc } from "firebase/firestore";
-import Image from "next/image";
 
-async function addDataToFireStore(image: string | null, title: string | null, description: string | null) {
+async function addDataToFireStore(image: string | null, title: string | null, description: string | null, userId: string | undefined) {
     try {
         const docRef = await addDoc(collection(db, 'message'), {
             urlToImage: image,
@@ -33,13 +32,15 @@ export default function Page() {
 
     const handleSubmit = async () => {
         // e.preventDefault();
-        const added = await addDataToFireStore(image, title, description);
+        const added = await addDataToFireStore(image, title, description, userId);
         if (added) {
             toast.success('News Saved Successfully');
         }
     };
 
     const [user] = useAuthState(auth);
+    const userId = user?.uid;
+    // console.log(user?.uid);
 
     return (
         <div className="flex ">
