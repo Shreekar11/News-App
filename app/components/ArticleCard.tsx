@@ -25,7 +25,7 @@ function ArticleCard({news}: Props){
 
     return (
         <main className={inter.className}>
-            <div className='mx-auto w-80 sm:w-96 m-3 mt-4 p-3 relative rounded-sm flex-col justify-center ring ring-gray-200 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-60 hover:scale-105 hover:shadow-lg hover:bg-slate-100 transition-all ease-out cursor-pointer'>
+            <div className='mx-auto w-72 sm:w-96 m-3 mt-4 p-3 relative rounded-sm flex-col justify-center ring ring-gray-200 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-60 hover:scale-105 hover:shadow-lg hover:bg-slate-100 transition-all ease-out cursor-pointer'>
                 {news.urlToImage ? (
                     <Link href={`/articles/${news.title}?${convertObjectToUrl()}`}>
                         <img
