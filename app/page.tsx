@@ -1,6 +1,7 @@
 import fetchNews from './lib/fetchNews';
 import { Nunito } from 'next/font/google';
 import NewsList from './components/NewsList';
+import Content from './components/Content';
 
 const inter = Nunito({ subsets: ['latin'] });
 
@@ -12,7 +13,8 @@ async function Home() {
 
   return (
     <div className={inter.className}>
-      <NewsList news={ news }/>
+      <Content />
+      <NewsList news={news} />
     </div>
   )
 }
