@@ -1,10 +1,10 @@
 'use client';
-import { Toaster, toast } from "sonner";
 import Link from "next/link";
-import { auth } from "@/app/firebase/firebaseApp";
-import { useSearchParams } from "next/navigation"
-import { useAuthState } from "react-firebase-hooks/auth";
+import { Toaster, toast } from "sonner";
 import { db } from "@/app/firebase/firebaseApp";
+import { useSearchParams } from "next/navigation"
+import { auth } from "@/app/firebase/firebaseApp";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { doc, collection, addDoc } from "firebase/firestore";
 
 async function addDataToFireStore(image: string | null, title: string | null, description: string | null, userId: string | undefined) {
@@ -40,7 +40,6 @@ export default function Page() {
 
     const [user] = useAuthState(auth);
     const userId = user?.uid;
-    // console.log(user?.uid);
 
     return (
         <div className="flex ">
@@ -68,7 +67,7 @@ export default function Page() {
                         {user &&
                             <button
                                 onClick={handleSubmit}
-                                className="p-3 mt-5 text-xl font-semibold ring ring-slate-300 rounded-md hover:bg-slate-100 ">
+                                className="p-3 mt-5 text-xl font-semibold ring bg-slate-200 ring-slate-300 rounded-md hover:bg-slate-100 ">
                                 Save News
                                 <Toaster richColors position="top-center" />
                             </button>

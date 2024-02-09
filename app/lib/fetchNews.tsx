@@ -5,7 +5,8 @@ const fetchNews = async (
 ) => {
     // GraphQL Query
     const query = gql`
-    query myQuery(
+    query myQuery
+    (
         $apiKey: String!
     ) {
         myQuery(

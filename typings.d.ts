@@ -10,8 +10,10 @@ type ArticlesEntry = {
 };
 
 type Root = {
-    data: {
-        myQuery:{
+    data: 
+    {
+        myQuery:
+        {
             articles: ArticlesEntry[];
             status: string;
             totalResults: int;

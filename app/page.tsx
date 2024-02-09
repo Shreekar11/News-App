@@ -5,11 +5,9 @@ import Content from './components/Content';
 
 const inter = Nunito({ subsets: ['latin'] });
 
-async function Home() {
+const Home = async () => {
 
   const news: Root = await fetchNews()
-
-  // console.log(news);
 
   return (
     <div className={inter.className}>

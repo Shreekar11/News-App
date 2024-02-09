@@ -8,6 +8,9 @@
         rounded-full p-4 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;  
     }
 }
+.bg-img {
+    background-size: cover;
+  }
 
 .slide-up{
     animation: slideUp 0.75s linear forwards;
