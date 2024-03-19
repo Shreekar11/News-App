@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Navbar from "./components/Navbar";
-import backgroundImage from "../public/design-space-paper-textured-background.jpg";
 import "./globals.css";
 
 const inter = Nunito({ subsets: ["latin"] });
@@ -17,12 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      style={{
-        backgroundImage: `url(${backgroundImage.src})`,
-      }}
-    >
+    <html lang="en">
       <body className={inter.className}>
         <Navbar />
         {children}
